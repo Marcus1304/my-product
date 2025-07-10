@@ -1,0 +1,14 @@
+name: CI                # Nom du workflow affiché dans l’onglet Actions
+
+on: [push, pull_request] # Déclencheurs : chaque push et chaque PR
+
+jobs:
+  test:                 # Identifiant du job (libre)
+    runs-on: ubuntu-latest  # Runner GitHub hébergé
+
+    steps:
+      - uses: actions/checkout@v4   # Clone ton dépôt dans le runner
+
+      - name: Lint README          # Step exemple
+        run: echo "Looks good 👍"   # Commande shell
+
